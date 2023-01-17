@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -12,9 +12,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home:   Scaffold (  
-        appBar:AppBar(title: const Text ('first app ')), 
-      body: 
-      const Text('Welcome to this app'),
+        appBar:AppBar(title: const Text ('Quiz App ')), 
+        body: 
+      const Text('Question '),
       )
       
     
