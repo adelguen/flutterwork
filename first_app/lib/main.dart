@@ -15,11 +15,11 @@ class MyApp extends StatelessWidget {
         appBar:AppBar(title: const Text ('Quiz App ')), 
         body: 
       Column(
-        children: const [
-           Text('\n Question '),
-          ElevatedButton(onPressed: null, child: Text ('reponse 1')),
-          ElevatedButton(onPressed: null, child: Text ('reponse 2')),
-          ElevatedButton(onPressed: null, child: Text ('reponse 3')),
+        children: [
+           const Text('\n Question '),
+          ElevatedButton(onPressed: () => print('Reponse 1 selectionnée'), child: const Text ('reponse 1')),
+          ElevatedButton(onPressed: () => print('Reponse 2 selectionnée'), child: const Text ('reponse 2')),
+         ElevatedButton(onPressed: () => print('Reponse 3 selectionnée'), child: const Text ('reponse 3')),
 
 
         ],
