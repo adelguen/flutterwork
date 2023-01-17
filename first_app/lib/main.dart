@@ -14,7 +14,16 @@ class MyApp extends StatelessWidget {
       home:   Scaffold (  
         appBar:AppBar(title: const Text ('Quiz App ')), 
         body: 
-      const Text('Question '),
+      Column(
+        children: const [
+           Text('\n Question '),
+          ElevatedButton(onPressed: null, child: Text ('reponse 1')),
+          ElevatedButton(onPressed: null, child: Text ('reponse 2')),
+          ElevatedButton(onPressed: null, child: Text ('reponse 3')),
+
+
+        ],
+      ),
       )
       
     
