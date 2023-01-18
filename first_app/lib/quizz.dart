@@ -10,7 +10,7 @@ class Quizz extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return      Column(
-        children: [  Question(questions:questions,questionIndex:questionIndex,getReponse:getReponse)
+        children: [  Question(question:questions[questionIndex]['Question'] as String)
            ,
            ...(questions[questionIndex]['reponses']
            as List<Map>)
