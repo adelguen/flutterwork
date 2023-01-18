@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
            const Text('\n Question '),
           ElevatedButton(onPressed: () => print('Reponse 1 selectionnée'), child: const Text ('reponse 1')),
           ElevatedButton(onPressed: () => print('Reponse 2 selectionnée'), child: const Text ('reponse 2')),
-         ElevatedButton(onPressed: () => print('Reponse 3 selectionnée'), child: const Text ('reponse 3')),
+          ElevatedButton(onPressed: () => print('Reponse 3 selectionnée'), child: const Text ('reponse 3')),
 
 
         ],
