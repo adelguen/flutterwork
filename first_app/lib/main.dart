@@ -46,11 +46,16 @@ class _MyAppState extends State<MyApp> {
         body: 
       Column(
         children: [
-           Text(_questions[_questionIndex]['Question'] ),
-          ElevatedButton(onPressed:  _getreponse, child: const Text ('reponse 1')),
-          ElevatedButton(onPressed: _getreponse, child: const Text ('reponse 2')),
-          ElevatedButton(onPressed: _getreponse, child: const Text ('reponse 3')),
-],
+           Text(_questions[_questionIndex]['Question'] as String ),
+           ...(_questions[_questionIndex]['reponses']
+           as List<Map<String,Object>>).map((rep) => 
+           ElevatedButton(onPressed:  _getreponse, 
+           child: Text (rep['text'] as String )))
+           .toList()
+           
+           ],
+          
+
       ),
       )
       
