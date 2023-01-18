@@ -16,7 +16,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   int _questionIndex=0;
   int _score=0;
-  bool quizcompleted=false;
+  bool _quizcompleted=false;
   final _questions= [
     {"Question" : "What language usede with Flutter","reponses" :[
       {"text": "javascript", "score":0},
@@ -45,6 +45,7 @@ class _MyAppState extends State<MyApp> {
       home:   Scaffold (  
         appBar:AppBar(title: const Text ('Quiz App ')), 
         body: 
+        !_quizcompleted ? 
       Column(
         children: [
            Text(_questions[_questionIndex]['Question'] as String ),
@@ -58,7 +59,10 @@ class _MyAppState extends State<MyApp> {
            ],
           
 
-      ),
+      ): Center(
+
+        child: Text("Resultat:  + $_score.toString()"),
+      )
       )
       
     
@@ -77,7 +81,11 @@ class _MyAppState extends State<MyApp> {
    });
    }
    else {
-    quizcompleted=true;
+     setState(() {
+    
+     _quizcompleted=true;
+   });
+   
    }
 }
 }
