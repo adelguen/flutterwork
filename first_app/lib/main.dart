@@ -1,5 +1,6 @@
+import './quizz.dart';
 import 'package:flutter/material.dart';
-
+import './result.dart' ;
 
 void main() {
   runApp( MyApp());
@@ -46,23 +47,9 @@ class _MyAppState extends State<MyApp> {
         appBar:AppBar(title: const Text ('Quiz App ')), 
         body: 
         !_quizcompleted ? 
-      Column(
-        children: [
-           Text(_questions[_questionIndex]['Question'] as String ),
-           ...(_questions[_questionIndex]['reponses']
-           as List<Map>)
-           .map((rep) => 
-           ElevatedButton(onPressed: ()=> _getreponse(rep['score']), 
-           child: Text (rep['text'] as String )))
-           .toList()
-           
-           ],
-          
-
-      ): Center(
-
-        child: Text("Resultat:   $_score "),
-      )
+      Quizz(questions :_questions ,
+       questionIndex:_questionIndex ,
+       getReponse: _getreponse) : Result(inputscore :_score)
       )
       
     
