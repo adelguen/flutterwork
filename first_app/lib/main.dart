@@ -24,11 +24,12 @@ class _MyAppState extends State<MyApp> {
 
 void _getreponse(){
    print (" reponse selectionnée !") ;
-   print(_questionIndex);
+   if(_questionIndex <  _questions.length-1){
    setState(() {
+    
      _questionIndex++;
    });
-   
+   }
 }
 
   @override
