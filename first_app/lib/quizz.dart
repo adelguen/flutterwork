@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import './question.dart';
 
 class Quizz extends StatelessWidget {
   int questionIndex=0;
@@ -10,8 +10,8 @@ class Quizz extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return      Column(
-        children: [
-           Text(questions[questionIndex]['Question'] as String ),
+        children: [  Question(questions:questions,questionIndex:questionIndex,getReponse:getReponse)
+           ,
            ...(questions[questionIndex]['reponses']
            as List<Map>)
            .map((rep) => 
