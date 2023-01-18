@@ -61,7 +61,7 @@ class _MyAppState extends State<MyApp> {
 
       ): Center(
 
-        child: Text("Resultat:  + $_score.toString()"),
+        child: Text("Resultat:   $_score "),
       )
       )
       
