@@ -16,6 +16,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   int _questionIndex=0;
   int _score=0;
+  bool quizcompleted=false;
   final _questions= [
     {"Question" : "What language usede with Flutter","reponses" :[
       {"text": "javascript", "score":0},
@@ -74,6 +75,9 @@ class _MyAppState extends State<MyApp> {
     
      _questionIndex++;
    });
+   }
+   else {
+    quizcompleted=true;
    }
 }
 }
