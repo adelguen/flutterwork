@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import './question.dart';
+import '/response.dart';
+
 
 class Quizz extends StatelessWidget {
   int questionIndex=0;
@@ -15,9 +17,12 @@ class Quizz extends StatelessWidget {
            ...(questions[questionIndex]['reponses']
            as List<Map>)
            .map((rep) => 
-           ElevatedButton(onPressed: ()=> getReponse(rep['score']), 
-           child: Text (rep['text'] as String )))
-           .toList()
+           Response  (
+
+
+            
+           )
+
            
            ],
           
