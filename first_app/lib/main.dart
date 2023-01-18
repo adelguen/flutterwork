@@ -15,7 +15,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int _questionIndex=0;
-
+  int _score=0;
   final _questions= [
     {"Question" : "What language usede with Flutter","reponses" :[
       {"text": "javascript", "score":0},
@@ -48,8 +48,9 @@ class _MyAppState extends State<MyApp> {
         children: [
            Text(_questions[_questionIndex]['Question'] as String ),
            ...(_questions[_questionIndex]['reponses']
-           as List<Map<String,Object>>).map((rep) => 
-           ElevatedButton(onPressed:  _getreponse, 
+           as List<Map>)
+           .map((rep) => 
+           ElevatedButton(onPressed: ()=> _getreponse(rep['score']), 
            child: Text (rep['text'] as String )))
            .toList()
            
@@ -64,8 +65,10 @@ class _MyAppState extends State<MyApp> {
 
   }
 
-  void _getreponse(){
-   print (" reponse selectionnée !") ;
+  // ignore: non_constant_identifier_names
+  void _getreponse(int Responsescore){
+    _score+=Responsescore;
+   print (_score) ;
    if(_questionIndex <  _questions.length-1){
    setState(() {
     
