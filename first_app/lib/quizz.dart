@@ -17,11 +17,12 @@ class Quizz extends StatelessWidget {
            ...(questions[questionIndex]['reponses']
            as List<Map>)
            .map((rep) => 
-           Response  (
-
+           Response  ( 
+              response : rep,
+              getReponse: getReponse,
 
             
-           )
+           ))
 
            
            ],
