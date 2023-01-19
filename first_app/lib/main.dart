@@ -1,6 +1,7 @@
 import './quizz.dart';
 import 'package:flutter/material.dart';
 import './result.dart' ;
+import './reset.dart' ;
 
 void main() {
   runApp( MyApp());
@@ -46,10 +47,15 @@ class _MyAppState extends State<MyApp> {
       home:   Scaffold (  
         appBar:AppBar(title: const Text ('Quiz App ')), 
         body: 
-        !_quizcompleted ? 
+       Column( 
+        children : [!_quizcompleted ? 
       Quizz(questions :_questions ,
        questionIndex:_questionIndex ,
-       getReponse: _getreponse) : Result(inputscore :_score)
+       getReponse: _getreponse) : Result(inputscore :_score), 
+      Reset( resetstate:_resetstate)]
+       )
+
+       
       )
       
     
@@ -75,4 +81,18 @@ class _MyAppState extends State<MyApp> {
    
    }
 }
+void _resetstate(){
+       setState(() {
+    _questionIndex=0;
+    _score=0;
+     _quizcompleted=false;
+     print(_score);
+      print(_quizcompleted);
+     
+   });
+   }
+   
+   
+   
+
 }
